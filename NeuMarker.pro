@@ -13,42 +13,45 @@ TEMPLATE = app
 
 CONFIG -= debug_and_release debug_and_release_target
 
-SOURCES += main.cpp\
-        mainwindow.cpp \
-    core.cpp \
-    add_pre_processing_pict.cpp \
-    slice_item_review.cpp \
-    add_new_cat.cpp \
-    neuronsdetection_lab.cpp \
-    neuronsmarker.cpp \
-    mouselistener_forqgraphicspixmapitem.cpp \
-    algoritm_settings.cpp \
-    endlessprogressbar.cpp \
-    labfilterinit.cpp \
-    TotalSettings.cpp
+SOURCES += \
+    src/main.cpp\
+    src/mainwindow.cpp \
+    src/core.cpp \
+    src/add_pre_processing_pict.cpp \
+    src/slice_item_review.cpp \
+    src/add_new_cat.cpp \
+    src/neuronsdetection_lab.cpp \
+    src/neuronsmarker.cpp \
+    src/mouselistener_forqgraphicspixmapitem.cpp \
+    src/algoritm_settings.cpp \
+    src/endlessprogressbar.cpp \
+    src/labfilterinit.cpp \
+    src/TotalSettings.cpp
 
-HEADERS  += mainwindow.h \
-    core.h \
-    add_pre_processing_pict.h \
-    slice_item_review.h \
-    add_new_cat.h \
-    neuronsdetection_lab.h \
-    neuronsmarker.h \
-    wheelevent_forqsceneview.h \
-    mouselistener_forqgraphicspixmapitem.h \
-    algoritm_settings.h \
-    synchro_qsceneview.h \
-    endlessprogressbar.h \
-    bigimageloader.h \
-    labfilterinit.h \
-    TotalSettings.h
+HEADERS  += \
+    include/mainwindow.h \
+    include/core.h \
+    include/add_pre_processing_pict.h \
+    include/slice_item_review.h \
+    include/add_new_cat.h \
+    include/neuronsdetection_lab.h \
+    include/neuronsmarker.h \
+    include/wheelevent_forqsceneview.h \
+    include/mouselistener_forqgraphicspixmapitem.h \
+    include/algoritm_settings.h \
+    include/synchro_qsceneview.h \
+    include/endlessprogressbar.h \
+    include/bigimageloader.h \
+    include/labfilterinit.h \
+    include/TotalSettings.h
 
-FORMS    += mainwindow.ui \
-    add_pre_processing_pict.ui \
-    slice_item_review.ui \
-    add_new_cat.ui \
-    algoritm_settings.ui \
-    TotalSettings.ui
+FORMS    += \
+    ui/mainwindow.ui \
+    ui/add_pre_processing_pict.ui \
+    ui/slice_item_review.ui \
+    ui/add_new_cat.ui \
+    ui/algoritm_settings.ui \
+    ui/TotalSettings.ui
 
 DESTDIR = $$PWD/Deploy
 
