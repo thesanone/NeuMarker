@@ -625,7 +625,7 @@ int Core::submit_scene(QString method, QString cellsGroupName, QString comment)
 {
     QList<QGraphicsItem*> all_items = scene->items();
     std::vector<cv::Rect> rectList;
-    int pict_width, pict_height;
+    //int pict_width, pict_height;
     for(QList<QGraphicsItem*>::iterator i = all_items.begin(); i != all_items.end(); i++)
     {
         QGraphicsItem* item = *i;
@@ -638,11 +638,11 @@ int Core::submit_scene(QString method, QString cellsGroupName, QString comment)
                 rectList.push_back(cv::Rect(rec.x(), rec.y(), rec.width(), rec.height()));
             }
         }
-        if(item->type() == 7)
+        /*if(item->type() == 7)
         {
             pict_width = (int)item->boundingRect().width();
             pict_height = (int)item->boundingRect().height();
-        }
+        }*/
     }
 
     QSqlQuery query;
@@ -652,7 +652,7 @@ int Core::submit_scene(QString method, QString cellsGroupName, QString comment)
                   "VALUES (:SliceID, :method, :neuFound, :cellsGroupName, :comment)");
     query.bindValue(":SliceID",pre_processing_id);
     query.bindValue(":method", method);
-    query.bindValue(":neuFound", rectList.size());
+    query.bindValue(":neuFound", static_cast<quint32>(rectList.size()));
     query.bindValue(":cellsGroupName", cellsGroupName);
     query.bindValue(":comment", comment);
 
