@@ -53,7 +53,7 @@ FORMS    += \
     ui/algoritm_settings.ui \
     ui/TotalSettings.ui
 
-DESTDIR = $$PWD/Deploy
+DESTDIR = $$PWD/bin
 
 #win32 {
 #    CONFIG(debug, debug|release){
